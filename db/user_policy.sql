@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2025 at 02:46 PM
+-- Generation Time: Jan 17, 2025 at 05:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,23 +33,21 @@ CREATE TABLE `user_policy` (
   `fullName` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `mobileNo` bigint(20) NOT NULL,
+  `mobileNum` varchar(10) NOT NULL,
   `isDisabled` tinyint(1) DEFAULT 0,
   `policyRead` tinyint(1) DEFAULT 0,
   `barangay` varchar(50) DEFAULT NULL,
-  `accessLevel` int(11) NOT NULL
+  `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user_policy`
 --
 
-INSERT INTO `user_policy` (`id`, `username`, `fullName`, `password`, `email`, `mobileNo`, `isDisabled`, `policyRead`, `barangay`, `accessLevel`) VALUES
-('413fccd5-c701-11ef-aed0-4ccc6a4b4f05', 'a', 'a', '$2y$10$mZNPS7wb4vZDdYCKD7DTU.LCZiVFVT5W1XGiXk4DBCeSbAwdKKKWm', 'a@a.com', 9184671626, 0, 0, 'Lobogon', 2),
-('6f1599ac-c701-11ef-aed0-4ccc6a4b4f05', 'testing', 'testing', '$2y$10$LLrRWnzum8n.NMaBay/FtuUPlX8D36HAgW.LB0RRFaXxEKY95p3/y', 'testing@testing.com', 91283871755, 0, 0, 'N/A', 0),
-('944ce6d1-c701-11ef-aed0-4ccc6a4b4f05', 'testing', 'testing', '$2y$10$B2Awl1v93Sd3m52T.OZ7S.IO1AKE/O4x0SdgQd8XD6T2E9I6IFBea', 'testing@testing.com', 91283871755, 0, 0, 'N/A', 0),
-('a65060b2-cf58-11ef-9ccc-088fc37fb4a8', 'a', 'a', '$2y$10$jwRN8BC6K4mKIeR0EDsgce666/tH5Po0V7G2QYAU.EP6J7OfLezHC', 'a@a.com', 639823747623, 0, 0, 'N/A', 0),
-('fe02106d-cf58-11ef-9ccc-088fc37fb4a8', 'b', 'b', '$2y$10$ERhkSCoTEPdTNZuURc6UCOs4AR9ycDIPOawPUPRl82Xq7aeLBMKVi', 'b@b.com', 63, 0, 0, 'Balintonga', 0);
+INSERT INTO `user_policy` (`id`, `username`, `fullName`, `password`, `email`, `mobileNum`, `isDisabled`, `policyRead`, `barangay`, `role`) VALUES
+('16c971d1-d46a-11ef-9e2d-088fc37fb4a8', 'asdf', 'asdf', '$2y$10$/LH1vi4hmoNE.5Qk/yYr.esdwwNM9D63YODFk5YmD2xDMS1NMgKcW', 'asdf@asdf.com', '9182737123', 0, 0, 'N/A', 'Admin'),
+('780102b6-d460-11ef-9e2d-088fc37fb4a8', 'aaa', 'aaa', '$2y$10$jhz3C2OpOcSx8VJXYheMPu.l0t7WtvlSK1PNK1kDidYb8skIspYM6', 'aa@aa.com', '9827834628', 0, 0, 'N/A', 'Admin'),
+('9d4f4eaf-d334-11ef-9d6f-088fc37fb4a8', 'willow', 'Willow D. Diamada', '$2y$10$Jkqcrmw0n3z58o0OU8rvruqVSw7jVSM1DUzt0lG3EDLkEZxHPl9hi', 'lgualorantesting@gmail.com', '9188577273', 0, 0, 'N/A', 'Admin');
 
 --
 -- Indexes for dumped tables

@@ -782,18 +782,18 @@ CREATE TABLE `user_policy` (
   `fullName` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `mobileNo` bigint(20) NOT NULL,
+  `mobileNum` bigint(20) NOT NULL,
   `isDisabled` tinyint(1) DEFAULT 0,
   `policyRead` tinyint(1) DEFAULT 0,
   `barangay` varchar(50) DEFAULT NULL,
-  `accessLevel` int(11) NOT NULL
+  `role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user_policy`
 --
 
-INSERT INTO `user_policy` (`id`, `username`, `fullName`, `password`, `email`, `mobileNo`, `isDisabled`, `policyRead`, `barangay`, `accessLevel`) VALUES
+INSERT INTO `user_policy` (`id`, `username`, `fullName`, `password`, `email`, `mobileNum`, `isDisabled`, `policyRead`, `barangay`, `role`) VALUES
 ('413fccd5-c701-11ef-aed0-4ccc6a4b4f05', 'a', 'a', '$2y$10$mZNPS7wb4vZDdYCKD7DTU.LCZiVFVT5W1XGiXk4DBCeSbAwdKKKWm', 'a@a.com', 9184671626, 0, 0, 'Lobogon', 2),
 ('41905773-d25a-11ef-8216-2a87283180ec', 'user1', 'test user', 'password', 'email@gmail.com', 9501028123, 0, 0, 'Palayan', 0),
 ('6f1599ac-c701-11ef-aed0-4ccc6a4b4f05', 'testing', 'testing', '$2y$10$LLrRWnzum8n.NMaBay/FtuUPlX8D36HAgW.LB0RRFaXxEKY95p3/y', 'testing@testing.com', 91283871755, 0, 0, 'N/A', 0),
