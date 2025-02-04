@@ -60,7 +60,7 @@ values (
 
 -- the super admin role
 INSERT INTO roles (name, allow_barangay, permissions_id)
-values ('Super Admin', true, 1);
+values ('Super Admin', false, 1);
 
 
 -- the super admin user account

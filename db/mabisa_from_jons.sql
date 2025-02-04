@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `barangay_assessment` (
   `keyctr` int(11) NOT NULL,
   `barangay_id` varchar(10) NOT NULL,
-  `last_modified` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `last_modified` datetime NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
