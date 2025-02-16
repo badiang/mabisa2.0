@@ -59,7 +59,7 @@ values (
 ) ;
 
 -- the super admin role
-INSERT INTO roles (name, allow_barangay, permissions_id)
+INSERT INTO roles (name, allow_bar, permissions_id)
 values ('Super Admin', false, 1);
 
 

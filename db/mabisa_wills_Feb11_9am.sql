@@ -754,7 +754,7 @@ INSERT INTO `refprovince` (`provid`, `provname`, `country`, `trail`) VALUES
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `allow_barangay` tinyint(1) NOT NULL,
+  `allow_bar` tinyint(1) NOT NULL,
   `permissions_id` int(11) NOT NULL,
   `last_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -763,7 +763,7 @@ CREATE TABLE `roles` (
 -- Dumping data for table `roles`
 --
 
-INSERT INTO `roles` (`id`, `name`, `allow_barangay`, `permissions_id`, `last_modified`) VALUES
+INSERT INTO `roles` (`id`, `name`, `allow_bar`, `permissions_id`, `last_modified`) VALUES
 (1, 'Super Admin', 0, 1, '2025-02-03 23:38:49'),
 (2, 'Secretary', 1, 2, '2025-02-07 12:00:26'),
 (3, 'Admin', 0, 3, '2025-02-10 05:16:13');
