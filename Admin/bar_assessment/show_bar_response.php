@@ -232,7 +232,7 @@ unset($_SESSION['success']);
                                     if ($current_indicator !== $last_indicator):
                                         if ($table_started) {
                                             echo "</tbody></table>";
-                                         }
+                                        }
                                 ?>
                                         <div class="row bg-info" style="margin: 0; padding: 10px 0;">
                                             <h6 class="col-lg-12 text-center text-white" style="margin: 0;">
@@ -291,6 +291,8 @@ unset($_SESSION['success']);
                                                             </form>
                                                         <?php elseif (userHasPerms(['submissions_approve'], 'any', $barangay_id, $row['indicator_keyctr']) || userHasPerms(['comments_read'], 'any', $barangay_id, $row['indicator_keyctr'])): ?>
                                                             <p>No Uploads Yet</p>
+                                                        <?php else: ?>
+                                                            <p>Not permitted</p>
                                                         <?php endif; ?>
                                                     <?php else: ?>
                                                         <button type="button" class="btn btn-success mb-3" title="View"
@@ -324,10 +326,14 @@ unset($_SESSION['success']);
                                                                 <p>Waiting for Approval</p>
                                                             </div>
                                                         <?php endif; ?>
+                                                    <?php else: ?>
+                                                        <div class="rounded bg-secondary text-white">
+                                                            <p>Unknown</p>
+                                                        </div>
                                                     <?php endif; ?>
                                                 </td>
                                                 <td class="data-cell-date-uploaded" style="text-align: center; vertical-align: middle;">
-                                                    <?php echo !empty($data) ? htmlspecialchars($data['date_uploaded']) : ''; ?>
+                                                    <?php echo !empty($data) ? htmlspecialchars($data['date_uploaded']) : 'Unknown'; ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
