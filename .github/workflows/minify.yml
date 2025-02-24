@@ -12,6 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install Node.js (for terser)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
       - name: Remove comments and writeLog() calls
         run: |
           find . -type f -name "*.php" -exec sed -i '/\/\/.*/d; /\/\*/,/\*\//d' {} +
@@ -21,13 +26,12 @@ jobs:
         run: |
           find . -type f -name "*.php" -exec php -w {} \; > temp && mv temp {}
 
-      - name: Minify JavaScript
-        uses: nizarmah/mini-deploy@v1
-        with:
-          branch: production
-          minify_js: true
-          minify_css: false
-          minify_html: false
+      - name: Install Terser for JS minification
+        run: npm install -g terser
+
+      - name: Minify JavaScript files
+        run: |
+          find . -type f -name "*.js" -exec terser {} -o {} --compress --mangle \;
 
       - name: Commit and push changes
         run: |
