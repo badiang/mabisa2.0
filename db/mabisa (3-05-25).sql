@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2025 at 02:35 AM
+-- Generation Time: Mar 05, 2025 at 03:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -266,7 +266,24 @@ INSERT INTO `audit_log` (`action_id`, `user_id`, `username`, `action`, `time_and
 (224, 1, 'admin', 'Deleted an Area with id: 9', '2025-03-05 09:07:08'),
 (225, 1, 'admin', 'Created a New Criteria with Version ID: 1, Indicator ID: 3, Minimum Requirements ID: 4, Sub Minimum ', '2025-03-05 09:20:37'),
 (226, 1, 'admin', 'Created a New Criteria with Version ID: 1, Indicator ID: 3, Minimum Requirements ID: 4, Sub Minimum Requirements: 1, MOV Documents Requirements: teteteateae, and Document Source: 1', '2025-03-05 09:24:02'),
-(227, 1, 'admin', 'Deleted a Criteria with an ID: 46', '2025-03-05 09:24:32');
+(227, 1, 'admin', 'Deleted a Criteria with an ID: 46', '2025-03-05 09:24:32'),
+(228, 1, 'admin', 'Created a New Governance Entry with Cat Code: CORE, Area ID: 2, Description ID: 2', '2025-03-05 10:45:59'),
+(229, 1, 'admin', 'Deleted a Governance Entry with ID: 10', '2025-03-05 10:46:26'),
+(230, 1, 'admin', 'Created a New Governance Entry with Cat Code: CORE, Area ID: 2, Description ID: 2', '2025-03-05 10:48:00'),
+(231, 1, 'admin', 'Updated Governance Entry with ID: 11 to Cat Code: ESSE, Area ID: 4, Description ID: 4', '2025-03-05 10:48:15'),
+(232, 1, 'admin', 'Updated Governance Entry with ID: 11 to Cat Code: ESSE, Area ID: 3, Description ID: 3', '2025-03-05 10:48:22'),
+(233, 1, 'admin', 'Deleted a Governance Entry with ID: 11', '2025-03-05 10:48:28'),
+(234, 1, 'admin', 'Created a new Indicator with Governance Code: 2, Area Description: DISASTER PREPAREDNESS, Indicator Description: eyyyyy and Relevance Definition: eyyyyy', '2025-03-05 11:11:35'),
+(235, 1, 'admin', 'Updated Indicator: eyyyyy, Governance Code: 2, Area Description: DISASTER PREPAREDNESS, Indicator Description: eyyyyy, Relevance Definition: biii', '2025-03-05 11:15:05'),
+(236, 1, 'admin', 'Deleted an Indicator Description with Id: 36', '2025-03-05 11:15:13'),
+(237, 1, 'admin', 'Deleted a Minimum Requirement with ID: 88', '2025-03-05 11:25:06'),
+(238, 31, 'sec', 'Deleted file with ID: 58', '2025-03-05 21:45:22'),
+(239, 1, 'admin', 'Reverted a file to pending with file ID: 57', '2025-03-05 21:45:56'),
+(240, 31, 'sec', 'Deleted file with ID: 57', '2025-03-05 21:46:33'),
+(241, 1, 'admin', 'Added a comment to file ID: 51', '2025-03-05 21:46:55'),
+(242, 1, 'admin', 'Barangay ID 104201001 has been submitted for validation', '2025-03-05 22:15:54'),
+(243, 1, 'admin', 'Barangay ID 104201001 has been submitted for validation', '2025-03-05 22:24:47'),
+(244, 1, 'admin', 'Added a comment to file ID: 55', '2025-03-05 22:38:10');
 
 -- --------------------------------------------------------
 
@@ -277,52 +294,53 @@ INSERT INTO `audit_log` (`action_id`, `user_id`, `username`, `action`, `time_and
 CREATE TABLE `barangay_assessment` (
   `keyctr` int(11) NOT NULL,
   `barangay_id` varchar(10) NOT NULL,
-  `last_modified` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `last_modified` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `is_ready` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `barangay_assessment`
 --
 
-INSERT INTO `barangay_assessment` (`keyctr`, `barangay_id`, `last_modified`) VALUES
-(1, '104201001', '2025-03-04 15:01:27'),
-(2, '104201002', '2025-03-04 04:41:08'),
-(3, '104201003', '2025-03-04 04:41:08'),
-(4, '104201004', '2025-03-04 04:41:08'),
-(5, '104201005', '2025-03-04 04:41:08'),
-(6, '104201006', '2025-03-04 04:41:08'),
-(7, '104201007', '2025-03-04 04:41:08'),
-(8, '104201008', '2025-03-04 04:41:08'),
-(9, '104201009', '2025-03-04 04:41:08'),
-(10, '104201010', '2025-03-04 04:41:08'),
-(11, '104201011', '2025-03-04 04:41:08'),
-(12, '104201012', '2025-03-04 04:41:08'),
-(13, '104201013', '2025-03-04 04:41:08'),
-(14, '104201014', '2025-03-04 04:41:08'),
-(15, '104201015', '2025-03-04 04:41:08'),
-(16, '104201016', '2025-03-04 04:41:08'),
-(17, '104201017', '2025-03-04 04:41:08'),
-(18, '104201018', '2025-03-04 04:41:08'),
-(19, '104201019', '2025-03-04 04:41:08'),
-(20, '104201020', '2025-03-04 04:41:08'),
-(21, '104201021', '2025-03-04 04:41:08'),
-(22, '104201022', '2025-03-04 04:41:08'),
-(23, '104201023', '2025-03-04 04:41:08'),
-(24, '104201024', '2025-03-04 04:41:08'),
-(25, '104201025', '2025-03-04 04:41:08'),
-(26, '104201026', '2025-03-04 04:41:08'),
-(27, '104201027', '2025-03-04 04:41:08'),
-(28, '104201028', '2025-03-04 04:41:08'),
-(29, '104201029', '2025-03-04 04:41:08'),
-(30, '104201030', '2025-03-04 04:41:08'),
-(31, '104201031', '2025-03-04 04:41:08'),
-(32, '104201032', '2025-03-04 04:41:08'),
-(33, '104201033', '2025-03-04 04:41:08'),
-(34, '104201034', '2025-03-04 04:41:08'),
-(35, '104201035', '2025-03-04 04:41:08'),
-(36, '104201036', '2025-03-04 04:41:08'),
-(37, '104201037', '2025-03-04 04:41:08'),
-(38, '104201038', '2025-03-04 04:41:08');
+INSERT INTO `barangay_assessment` (`keyctr`, `barangay_id`, `last_modified`, `is_ready`) VALUES
+(1, '104201001', '2025-03-05 22:27:53', 0),
+(2, '104201002', '2025-03-04 04:41:08', 0),
+(3, '104201003', '2025-03-04 04:41:08', 0),
+(4, '104201004', '2025-03-04 04:41:08', 0),
+(5, '104201005', '2025-03-04 04:41:08', 0),
+(6, '104201006', '2025-03-04 04:41:08', 0),
+(7, '104201007', '2025-03-04 04:41:08', 0),
+(8, '104201008', '2025-03-04 04:41:08', 0),
+(9, '104201009', '2025-03-04 04:41:08', 0),
+(10, '104201010', '2025-03-04 04:41:08', 0),
+(11, '104201011', '2025-03-04 04:41:08', 0),
+(12, '104201012', '2025-03-04 04:41:08', 0),
+(13, '104201013', '2025-03-04 04:41:08', 0),
+(14, '104201014', '2025-03-04 04:41:08', 0),
+(15, '104201015', '2025-03-04 04:41:08', 0),
+(16, '104201016', '2025-03-04 04:41:08', 0),
+(17, '104201017', '2025-03-04 04:41:08', 0),
+(18, '104201018', '2025-03-04 04:41:08', 0),
+(19, '104201019', '2025-03-04 04:41:08', 0),
+(20, '104201020', '2025-03-04 04:41:08', 0),
+(21, '104201021', '2025-03-04 04:41:08', 0),
+(22, '104201022', '2025-03-04 04:41:08', 0),
+(23, '104201023', '2025-03-04 04:41:08', 0),
+(24, '104201024', '2025-03-04 04:41:08', 0),
+(25, '104201025', '2025-03-04 04:41:08', 0),
+(26, '104201026', '2025-03-04 04:41:08', 0),
+(27, '104201027', '2025-03-04 04:41:08', 0),
+(28, '104201028', '2025-03-04 04:41:08', 0),
+(29, '104201029', '2025-03-04 04:41:08', 0),
+(30, '104201030', '2025-03-04 04:41:08', 0),
+(31, '104201031', '2025-03-04 04:41:08', 0),
+(32, '104201032', '2025-03-04 04:41:08', 0),
+(33, '104201033', '2025-03-04 04:41:08', 0),
+(34, '104201034', '2025-03-04 04:41:08', 0),
+(35, '104201035', '2025-03-04 04:41:08', 0),
+(36, '104201036', '2025-03-04 04:41:08', 0),
+(37, '104201037', '2025-03-04 04:41:08', 0),
+(38, '104201038', '2025-03-04 04:41:08', 0);
 
 -- --------------------------------------------------------
 
@@ -340,20 +358,6 @@ CREATE TABLE `barangay_assessment_files` (
   `file_path` text NOT NULL,
   `file_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `barangay_assessment_files`
---
-
-INSERT INTO `barangay_assessment_files` (`file_id`, `barangay_id`, `criteria_keyctr`, `date_uploaded`, `comments`, `status`, `file_path`, `file_name`) VALUES
-(51, '104201001', 43, '2025-03-04 14:23:48', '{}', 'pending', '../../files/67c69c7495b05_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf'),
-(52, '104201001', 37, '2025-03-04 14:45:43', '{}', 'pending', '../../files/67c6a197a4045_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf'),
-(53, '104201001', 36, '2025-03-04 14:45:51', '{}', 'approved', '../../files/67c6a19fb1d90_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf'),
-(54, '104201001', 39, '2025-03-04 14:46:02', '{}', 'approved', '../../files/67c6a1aab19ac_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf'),
-(55, '104201001', 38, '2025-03-04 14:46:19', '{}', 'approved', '../../files/67c6a1bb24c54_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf'),
-(56, '104201001', 41, '2025-03-04 14:46:27', '{}', 'approved', '../../files/67c6a1c33ccc1_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf'),
-(57, '104201001', 40, '2025-03-04 14:46:41', '{}', 'approved', '../../files/67c6a1d194c79_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf'),
-(58, '104201001', 42, '2025-03-04 15:01:27', '{}', 'pending', '../../files/67c6a547b7f54_barangay_ranking-2.pdf', 'barangay_ranking-2.pdf');
 
 -- --------------------------------------------------------
 
@@ -581,8 +585,7 @@ INSERT INTO `maintenance_area_mininumreqs` (`keyctr`, `indicator_keyctr`, `reqs_
 (83, 29, '6.1.4', 'Accomplishment Reports:\r\n a) At least 50% accomplishment of the \r\n physical targets in the BESWMP\r\n OR\r\n b) At least 50% utilization rate of CY \r\n 2023 BESWM Budget', 0, ''),
 (84, 30, '6.2.1', 'Presence of a Materials Recovery Facility (MRF)/Materials Recovery System (MRS)-Established MRF operated by the barangay-MRS-Clustered MRF', 0, ''),
 (85, 31, '6.3.1', 'Enacted Barangay Ordinance or similar issuance on segregation of wastes at-source', 0, ''),
-(86, 0, '111.1', 'asdasdsdasjdh', 0, ''),
-(88, 1, '1.1.1', 'yey', 1, '');
+(86, 0, '111.1', 'asdasdsdasjdh', 0, '');
 
 -- --------------------------------------------------------
 
@@ -945,7 +948,13 @@ INSERT INTO `notifications` (`id`, `user_id`, `title`, `message`, `is_read`, `cr
 (29, 31, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-05 01:20:37'),
 (30, 32, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-05 01:20:37'),
 (31, 31, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-05 01:24:02'),
-(32, 32, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-05 01:24:02');
+(32, 32, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-05 01:24:02'),
+(33, 31, 'super admin reverted your submission.', 'The super admin Master reverted the submission with file ID 57.', 0, '2025-03-05 13:45:56'),
+(34, 32, 'super admin reverted your submission.', 'The super admin Master reverted the submission with file ID 57.', 0, '2025-03-05 13:45:56'),
+(35, 31, 'super admin commented on your submission', 'The super admin Master commented File ID 51.', 0, '2025-03-05 13:46:55'),
+(36, 32, 'super admin commented on your submission', 'The super admin Master commented File ID 51.', 0, '2025-03-05 13:46:55'),
+(37, 31, 'super admin commented on your submission', 'The super admin Master commented File ID 55.', 0, '2025-03-05 14:38:10'),
+(38, 32, 'super admin commented on your submission', 'The super admin Master commented File ID 55.', 0, '2025-03-05 14:38:10');
 
 -- --------------------------------------------------------
 
@@ -1511,7 +1520,7 @@ ALTER TABLE `user_roles_barangay`
 -- AUTO_INCREMENT for table `audit_log`
 --
 ALTER TABLE `audit_log`
-  MODIFY `action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
+  MODIFY `action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
 
 --
 -- AUTO_INCREMENT for table `barangay_assessment`
@@ -1547,7 +1556,7 @@ ALTER TABLE `maintenance_area_description`
 -- AUTO_INCREMENT for table `maintenance_area_indicators`
 --
 ALTER TABLE `maintenance_area_indicators`
-  MODIFY `keyctr` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `keyctr` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `maintenance_area_mininumreqs`
@@ -1577,13 +1586,13 @@ ALTER TABLE `maintenance_document_source`
 -- AUTO_INCREMENT for table `maintenance_governance`
 --
 ALTER TABLE `maintenance_governance`
-  MODIFY `keyctr` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `keyctr` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `permissions`
