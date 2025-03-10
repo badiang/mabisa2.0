@@ -3,7 +3,7 @@
 declare(strict_types=1);
 $useAsImport; // for get_permissions.php
 $permsOnly = false;
-// $disableLogging = true; // set to true to disable for this file
+$disableLogging = true; // set to true to disable for this file
 require_once 'logging.php';
 require_once '../db/db.php';
 require_once 'get_all_perm_cols.php';
@@ -47,11 +47,10 @@ try {
   writeLog($allPermissions);
 
   // Fetch all indicators from the current active version 
-  $sql = "SELECT i.keyctr AS id, i.indicator_code AS code, mr.relevance_definition AS description
+  $sql = "SELECT i.keyctr AS id, i.indicator_code AS code, i.relevance_def AS description
   FROM maintenance_area_indicators i 
   JOIN maintenance_criteria_setup cs ON cs.indicator_keyctr = i.keyctr 
   JOIN maintenance_criteria_version v ON v.keyctr = cs.version_keyctr
-  JOIN maintenance_area_mininumreqs mr ON mr.keyctr = cs.minreqs_keyctr
   WHERE v.active_ = 1";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -67,7 +66,7 @@ try {
 
   /* 
   Fetch taken permissions by other users in user_roles_barangay (assessment)
-  include_once only the following:
+  include only the following:
   - permissions that match the same role
   - permissions that match the barangay & indicator
   */
@@ -159,13 +158,12 @@ WHERE urb.user_id = :uid AND r.id = :roleID
     foreach ($activeIndicators as $indicator) {
       // Get available assessment permissions (exclude taken ones)
       // $takenPermissions = array_filter($allPermissions, $takenAssessment[$bid]);
-      // $takenPermissions = $takenAssessment[$barangay['brgyid']][$indicator['id']] ?? [];
-      $takenPermissions = [];
+      $takenPermissions = $takenAssessment[$barangay['brgyid']][$indicator['id']] ?? [];
       $curUserPerms = $userAssessmentPerms[$barangay['brgyid']][$indicator['id']] ?? [];
       // writeLog('Taken permissions after: ');
       // writeLog($takenPermissions);
 
-      writeLog('ROW RESULT:');
+      writeLog('ROW RESULT: ');
       writeLog($barangay);
       writeLog('taken perms: ');
       writeLog($takenPermissions);
