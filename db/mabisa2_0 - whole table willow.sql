@@ -810,8 +810,8 @@ CREATE TABLE `notifications` (
 --
 
 INSERT INTO `notifications` (`id`, `user_id`, `title`, `message`, `is_read`, `created_at`, `file_link`) VALUES
-(11, 34, 'sec uploaded a new submission', 'The sec sec uploaded File ID 0.', 0, '2025-03-07 07:32:50', 'http://localhost/mabisa/Admin/bar_assessment/show_bar_response.php?barangay_id=104201001&expand=%23collapse-1e873cf76245019bb11b3bce3cab6c17#10420100137'),
-(12, 33, 'aud declined your submission.', 'The aud aud declined the submission with file ID 64.', 0, '2025-03-07 07:51:13', 'http://localhost/mabisa/Admin/bar_assessment/show_bar_response.php?barangay_id=104201001&expand=%23collapse-1e873cf76245019bb11b3bce3cab6c17#10420100137'),
+(11, 34, 'sec uploaded a new submission', 'The sec sec uploaded File ID 0.', 0, '2025-03-07 07:32:50', 'http://localhost/mabisa2.0/Admin/bar_assessment/show_bar_response.php?barangay_id=104201001&expand=%23collapse-1e873cf76245019bb11b3bce3cab6c17#10420100137'),
+(12, 33, 'aud declined your submission.', 'The aud aud declined the submission with file ID 64.', 0, '2025-03-07 07:51:13', 'http://localhost/mabisa2.0/Admin/bar_assessment/show_bar_response.php?barangay_id=104201001&expand=%23collapse-1e873cf76245019bb11b3bce3cab6c17#10420100137'),
 (13, 33, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-07 22:29:02', NULL),
 (14, 34, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-07 22:29:02', NULL),
 (15, 33, 'New Criteria Setup!', 'The super admin Master created new criteria. Please check them in your respective barangays.', 0, '2025-03-07 22:29:37', NULL),
